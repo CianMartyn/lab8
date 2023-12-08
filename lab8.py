@@ -56,7 +56,7 @@ plt.xticks([]), plt.yticks([])
 # Canny Edge Detection
 cannyThreshold = 100
 cannyParam2 = 300
-canny = cv2.Canny(imgGrey, cannyThreshold, cannyParam2)
+canny = cv2.Canny(imgBlurred1, cannyThreshold, cannyParam2)
 
 plt.subplot(2, 3, 6)
 plt.imshow(canny, cmap='gray')
