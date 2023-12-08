@@ -38,11 +38,6 @@ sobelVertical = cv2.Sobel(imgBlurred2, cv2.CV_64F, 0, 1, ksize=5)    # y directi
 # Combine Sobel horizontal and vertical
 imgBoth = (sobelHorizontal + sobelVertical)
 
-# Canny Edge Detection
-cannyThreshold = 100
-cannyParam2 = 300
-canny = cv2.Canny(imgGrey, cannyThreshold, cannyParam2)
-
 plt.subplot(2, 3, 3)
 plt.imshow(sobelHorizontal, cmap='gray')
 plt.title('Sobel X')
@@ -57,6 +52,11 @@ plt.subplot(2, 3, 5)
 plt.imshow(imgBoth, cmap='gray')
 plt.title('Sobel Sum')
 plt.xticks([]), plt.yticks([])
+
+# Canny Edge Detection
+cannyThreshold = 100
+cannyParam2 = 300
+canny = cv2.Canny(imgGrey, cannyThreshold, cannyParam2)
 
 plt.subplot(2, 3, 6)
 plt.imshow(canny, cmap='gray')
